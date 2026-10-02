@@ -35,3 +35,4 @@ C:\Users\agusf\source\repos\PracticaArquitectura\PracticaArquitectura\bin\Debug\
 C:\Users\agusf\source\repos\PracticaArquitectura\PracticaArquitectura\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\agusf\source\repos\PracticaArquitectura\PracticaArquitectura\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\agusf\source\repos\PracticaArquitectura\PracticaArquitectura\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\agusf\source\repos\PracticaArquitectura\PracticaArquitectura\obj\Debug\net10.0\PracticaArquitectura.sourcelink.json

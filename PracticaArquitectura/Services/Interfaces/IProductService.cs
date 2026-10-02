@@ -10,5 +10,5 @@ public interface IProductService
     void UpdateProduct(int id, ProductForUpdateDto dto);
     void DeleteProduct(int id);
     List<ProductForReadDto> SearchProductsByName(string name);
-    ProductStatsDto GetStatsDto();
+    ProductStatsDto GetStats();
 }

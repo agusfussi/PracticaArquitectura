@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PracticaArquitectura")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87f29ab3827fc781e5851ed93b65a73ad481d7db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d21b2c4dfb2ce5666e0dde3cf37535d3844df0f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("PracticaArquitectura")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PracticaArquitectura")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

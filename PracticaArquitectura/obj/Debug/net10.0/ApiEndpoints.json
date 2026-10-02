@@ -56,5 +56,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticaArquitectura.Controllers.ProductsController",
+    "Method": "SearchByName",
+    "RelativePath": "search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PracticaArquitectura.Controllers.ProductsController",
+    "Method": "GetStats",
+    "RelativePath": "stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

@@ -4,3 +4,11 @@ GET {{PracticaArquitectura_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+###
+POST http://localhost:5242/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": 100
+}
