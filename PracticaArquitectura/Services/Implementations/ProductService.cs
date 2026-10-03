@@ -1,14 +1,19 @@
 ﻿using PracticaArquitectura.Entities;
 using PracticaArquitectura.Models.DTOs.Reponses;
 using PracticaArquitectura.Models.DTOs.Requests;
-using PracticaArquitectura.Repositories.Implementations;
+using PracticaArquitectura.Repositories.Interfaces;
 using PracticaArquitectura.Services.Interfaces;
 
 namespace PracticaArquitectura.Services.Implementations
 {
     public class ProductService : IProductService
     {
-        private ProductRepository _repository = new ProductRepository();
+        private readonly IProductRepository _repository;
+
+        public ProductService(IProductRepository repository)
+        {
+            _repository = repository;
+        }
         public List<ProductForReadDto> GetAllProducts()
         {
             List<Product> productsEntidad = _repository.GetAllProducts();
@@ -23,12 +28,12 @@ namespace PracticaArquitectura.Services.Implementations
         public ProductForReadDto? GetProductById(int id)
         {
             Product? ProductEntidad = _repository.GetProductById(id);
-            if (ProductEntidad == null) 
-            { 
+            if (ProductEntidad == null)
+            {
                 return null;
             }
-            return new ProductForReadDto 
-            { 
+            return new ProductForReadDto
+            {
                 Id = ProductEntidad.Id,
                 Name = ProductEntidad.Name,
                 Price = ProductEntidad.Price,
@@ -37,18 +42,18 @@ namespace PracticaArquitectura.Services.Implementations
         public ProductForReadDto CreateProduct(ProductForCreateDto dto)
         {
             Product newProduct = new Product
-            { 
+            {
                 Name = dto.Name,
-                Price= dto.Price,
-                };
+                Price = dto.Price,
+            };
 
             _repository.AddProduct(newProduct);
 
-            return new ProductForReadDto 
+            return new ProductForReadDto
             {
                 Id = newProduct.Id,
                 Name = newProduct.Name,
-                Price = newProduct.Price, 
+                Price = newProduct.Price,
             };
 
         }
@@ -56,7 +61,7 @@ namespace PracticaArquitectura.Services.Implementations
         {
             Product? existingProduct = _repository.GetProductById(id);
 
-            if (existingProduct == null) 
+            if (existingProduct == null)
             {
                 return;
             }
@@ -96,8 +101,8 @@ namespace PracticaArquitectura.Services.Implementations
                 return new ProductStatsDto { Total = 0, AveragePrice = 0, MostExpensiveName = "Sin productos" };
             }
 
-            var total = productos.Count(); 
-            var promedio = productos.Average(p => p.Price); 
+            var total = productos.Count();
+            var promedio = productos.Average(p => p.Price);
 
             var masCaro = productos.OrderByDescending(p => p.Price).First();
 
@@ -107,6 +112,10 @@ namespace PracticaArquitectura.Services.Implementations
                 AveragePrice = promedio,
                 MostExpensiveName = masCaro.Name
             };
+        }
+            public bool NameExists(string name)
+        {
+            return _repository.GetAllProducts().Any(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

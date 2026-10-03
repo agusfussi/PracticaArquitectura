@@ -2,12 +2,19 @@
 using Microsoft.AspNetCore.Mvc;
 using PracticaArquitectura.Models.DTOs.Requests;
 using PracticaArquitectura.Services.Implementations;
+using PracticaArquitectura.Services.Interfaces;
 
 namespace PracticaArquitectura.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        private ProductService _service = new ProductService();
+        private readonly IProductService _service;
+        public ProductsController(IProductService service)
+        {
+            _service = service;
+        }
 
         [HttpGet]
         public IActionResult GetAll()

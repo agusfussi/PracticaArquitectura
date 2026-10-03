@@ -1,4 +1,6 @@
-
+using PracticaArquitectura.Repositories.Implementations;
+using PracticaArquitectura.Services.Implementations;
+using PracticaArquitectura.Services.Interfaces;
 namespace PracticaArquitectura
 {
     public class Program
